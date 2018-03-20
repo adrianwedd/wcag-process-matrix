@@ -7,6 +7,16 @@ This originated in me being frustrated by not seeing the title for success crite
 1. easy creation of any type of tables
 2. copy-pasting should easily make it possible to create sortable/filterable ODS tables.
 
+## Download files directly
+
+@TODO
+
+If you don't want to download, install and run the project locally, you can download directly these versions:
+
+* WCAG2.0 HTML file
+* WCAG2.0 ODS file
+* WCAG2.0 XLS file
+
 ## Building
 
 If you want to create your own tables, you need to install [PHPSpreadsheet](https://phpspreadsheet.readthedocs.io/). According to documentation, this needs:
