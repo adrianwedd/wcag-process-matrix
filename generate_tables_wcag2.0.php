@@ -33,6 +33,7 @@ require_once("inc/build_data_arrays.php");
 $folder = "output/";
 $filename = "process-matrix-wcag20";
 $linefeed = "<br>";
+$documenttitle = "WCAG 2.0 Process Matrix";
 
 $styles_headings = [
 	'font' => [
@@ -106,13 +107,48 @@ $worksheet->getColumnDimension('C')->setWidth(40);
 // add autofilter to avoid having to create one
 $worksheet->setAutoFilter($worksheet->calculateWorksheetDimension());
 
+$writer = new Xlsx($spreadsheet);
+$writer->save($folder . $filename . '.xlsx');
+echo "XLSX created" . $linefeed;
+$writer = new Ods($spreadsheet);
+$writer->save($folder . $filename . '.ods');
+echo "ODS created" . $linefeed;
 
+// 4. the same in HTML
 
-		$writer = new Xlsx($spreadsheet);
-		$writer->save($folder . $filename . '.xlsx');
-		echo "XLSX created" . $linefeed;
-		$writer = new Ods($spreadsheet);
-		$writer->save($folder . $filename . '.ods');
-		echo "ODS created" . $linefeed;
+// 4.1. get template
+$htmltpl = file_get_contents("inc/table_template.html");
+$htmlstr = "";
+
+// 4.2. generate table contents
+
+// header
+$htmlstr .= "<tr>";
+for($i = 0 ; $i < count($th) ; $i++) {
+	$htmlstr .= "<th>" . $th[$i] . "</th>";
+}
+$htmlstr .= "</tr>\n";
+
+// data
+for($i = 0 ; $i < count($tr) ; $i++) {
+	$htmlstr .= "<tr>";
+	for($j = 0 ; $j < count($tr[$i]) ; $j++) {
+		$htmlstr .= "<td>" . $tr[$i][$j] . "</td>";
+	}
+	$htmlstr .= "</tr>\n";
+}
+
+// 4.3. add content to template
+
+$htmltpl = preg_replace("/@@DOCUMENTTITLE@@/", $documenttitle, $htmltpl);
+$htmltpl = preg_replace("/@@CONTENT@@/", $htmlstr, $htmltpl);
+
+// 4.4. save file
+
+$fp = fopen($folder . $filename . '.html','w');
+if(fwrite($fp,$htmltpl) !== FALSE) {
+	echo "HTML created" . $linefeed;
+	fclose($fp);
+};
 
 ?>
