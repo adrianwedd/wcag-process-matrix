@@ -3,6 +3,7 @@
 // table header
 $th[] = "Guideline";
 $th[] = "Success criteria";
+$th[] = "Explanation";
 $th[] = "Level";
 for($i=0 ; $i < count($labels) ; $i++ ) {
 	$th[] = $labels[$i];
@@ -19,9 +20,12 @@ for($i=0 ; $i < count($wcag) ; $i++) {
 		for($k=0 ; $k < count($sc) ; $k++) {
 			// each $tr[$row] is one line in the final table
 			$tr[$row][] = $guidelines[$j]["ref_id"] . " - " . $principle . ": " . $guidelines[$j]["title"];
-			$tr[$row][] = $sc[$k]["ref_id"] . " - " . $sc[$k]["title"];
-			// misses $sc[$k]["description"]
-			// misses $sc[$k]["url"]
+			$sc_id = $sc[$k]["ref_id"];
+			$sc_title = $sc[$k]["title"];
+			$sc_description = $sc[$k]["description"];
+			$sc_url = $sc[$k]["url"];
+			$tr[$row][] = "<a href='" . $sc_url . "'><strong>" . $sc_id . " - " . $sc_title . "</strong></a>";
+			$tr[$row][] = $sc_description;
 			$tr[$row][] = $sc[$k]["level"];
 
 			// responsibility matrix injected here

@@ -17,6 +17,8 @@ If you don't want to download, install and run the project locally, you can down
 * WCAG2.0 ODS file
 * WCAG2.0 XLS file
 
+**Beware** The ODS is less useful than the XLS. I suspect PHPSpreadsheet does a better job with Excel but this will have to do for now. I still provide the ODS because open source love etc.
+
 ## Building
 
 If you want to create your own tables, you need to install [PHPSpreadsheet](https://phpspreadsheet.readthedocs.io/). According to documentation, this needs:

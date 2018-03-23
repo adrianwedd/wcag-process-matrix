@@ -1,5 +1,5 @@
 <?php
-
+echo "<pre>";
 // Generate table WCAG 2.0
 
 // -----------------------
@@ -75,6 +75,30 @@ $worksheet->fromArray(
 
 $worksheet->getStyle($worksheet->calculateWorksheetDimension())->applyFromArray($styles_all);
 $worksheet->getStyle('A1:C'.$worksheet->getHighestRow())->applyFromArray($styles_first_columns);
+
+// 2.3. formatting the thing correctly
+$rowcount = $worksheet->getHighestRow();
+for($i = 2 ; $i <= $rowcount ; $i++) {
+	// 1. store in a regexp everything that is going to be useful
+	// "<a href='" . $sc_url . "'><strong>" . $sc_id . " - " . $sc_title . "</strong></a>"
+	preg_match(
+		"/\<a href='(.*)'\>\<strong\>(.*)\<\/strong\>\<\/a\>/",
+		$worksheet->getCell('B'.$i)->getValue(),
+		$matches);
+	$sc_url = $matches[1];
+	$sc_title = $matches[2];
+	// 2. reconstruct string
+	$worksheet->getCell('B'.$i)->setValue($sc_title);
+	$worksheet->getCell('B'.$i)->getHyperlink()->setUrl($sc_url);
+	$worksheet->getStyle('B'.$i)->getAlignment()->setWrapText(true);
+	$worksheet->getStyle('C'.$i)->getAlignment()->setWrapText(true);
+	$worksheet->getRowDimension($i)->setRowHeight(12.75*4); // 4 lines, better than nothing
+}
+
+$worksheet->getColumnDimension('A')->setAutoSize(true);
+$worksheet->getColumnDimension('B')->setWidth(30);
+$worksheet->getColumnDimension('C')->setWidth(40);
+
 
 // -----------------------
 // 3. outputting the data to a file
