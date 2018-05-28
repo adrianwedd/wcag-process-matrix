@@ -9,15 +9,13 @@ This originated in me being frustrated by not seeing the title for success crite
 
 ## Download files directly
 
-@TODO
-
 If you don't want to download, install and run the project locally, you can download directly these versions:
 
-* WCAG2.0 HTML file
-* WCAG2.0 ODS file
-* WCAG2.0 XLS file
+* [WCAG2.0 HTML file](https://github.com/notabene/wcag-process-matrix/blob/master/output/process-matrix-wcag20.html)
+* [WCAG2.0 ODS file](https://github.com/notabene/wcag-process-matrix/blob/master/output/process-matrix-wcag20.ods)
+* [WCAG2.0 XLSX file](https://github.com/notabene/wcag-process-matrix/blob/master/output/process-matrix-wcag20.xlsx)
 
-**Beware** The ODS is less useful than the XLS. I suspect PHPSpreadsheet does a better job with Excel but this will have to do for now. I still provide the ODS because open source love etc.
+**Beware** The ODS is less useful than the XLSX. I suspect PHPSpreadsheet does a better job with Excel but this will have to do for now. I still provide the ODS because open source love etc.
 
 ## Building
 
