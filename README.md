@@ -31,6 +31,8 @@ If you want to create your own tables, you need to install [PHPSpreadsheet](http
 
 PHPSpreadsheet is licensed under [GNU LESSER GENERAL PUBLIC LICENSE](vendor/phpoffice/phpspreadsheet/LICENSE).
 
+For testing etc, please refer to [README2.md](README2.md).
+
 
 ## Credits
 
