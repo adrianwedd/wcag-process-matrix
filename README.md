@@ -17,9 +17,14 @@ It was evolved to WCAG 2.1 during a workhop that took place during Paris Web 201
 
 If you don't want to download, install and run the project locally, you can download directly these versions:
 
-* [WCAG2.0 HTML file](https://github.com/notabene/wcag-process-matrix/blob/master/output/process-matrix-wcag20.html)
-* [WCAG2.0 ODS file](https://github.com/notabene/wcag-process-matrix/blob/master/output/process-matrix-wcag20.ods)
-* [WCAG2.0 XLSX file](https://github.com/notabene/wcag-process-matrix/blob/master/output/process-matrix-wcag20.xlsx)
+* WCAG 2.0
+	* [WCAG2.0 HTML file](https://github.com/notabene/wcag-process-matrix/blob/master/output/process-matrix-wcag20.html)
+	* [WCAG2.0 ODS file](https://github.com/notabene/wcag-process-matrix/blob/master/output/process-matrix-wcag20.ods)
+	* [WCAG2.0 XLSX file](https://github.com/notabene/wcag-process-matrix/blob/master/output/process-matrix-wcag20.xlsx)
+* WCAG 2.1
+	* [WCAG2.1 HTML file](https://github.com/notabene/wcag-process-matrix/blob/master/output/process-matrix-wcag21.html)
+	* [WCAG2.1 ODS file](https://github.com/notabene/wcag-process-matrix/blob/master/output/process-matrix-wcag21.ods)
+	* [WCAG2.1 XLSX file](https://github.com/notabene/wcag-process-matrix/blob/master/output/process-matrix-wcag21.xlsx)
 
 **Beware** The ODS is less useful than the XLSX. I suspect PHPSpreadsheet does a better job with Excel but this will have to do for now. I still provide the ODS because open source love etc.
 
