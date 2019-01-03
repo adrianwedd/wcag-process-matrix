@@ -13,10 +13,10 @@
     </style>
 </head>
 <body>
-    
+
 <?php
 
-$url = "../data/wcag.json";
+$url = "../data/wcag2.1/wcag21.json";
 
 $contents = file_get_contents($url);
 $contents = utf8_encode($contents);
@@ -34,31 +34,52 @@ echo "<tr>";
     echo "<th>Criteria</th>";
     echo "<th>Level</th>";
 echo "</tr>";
-for($i=0 ; $i < count($wcag) ; $i++) {
-    // $principle = $wcag[$i]["ref_id"] . " - " . $wcag[$i]["title"];
-    $principle = $wcag[$i]["title"];
-    $guidelines = $wcag[$i]["guidelines"];
+$principles = $wcag["principles"];
+$str = "";
+
+for($i=0 ; $i < count($principles) ; $i++) {
+
+    $guidelines = $principles[$i]["guidelines"];
+
     for($j=0 ; $j < count($guidelines) ; $j++) {
-        $sc = $guidelines[$j]["success_criteria"];
+        $sc = $guidelines[$j]["successcriteria"];
         for($k=0 ; $k < count($sc) ; $k++) {
-            $str = "<tr>";
-                // $str .= "<td>" . $principle . "</td>";
-                $str .= "<td>" . $guidelines[$j]["ref_id"] . " - " . $principle . ": " . $guidelines[$j]["title"] . "</td>";
-                $str .= "<td>"
-                    . "<details><summary>" . $sc[$k]["ref_id"] . " - " . $sc[$k]["title"] . "</summary>"
-                    . $sc[$k]["description"]
-                    . "<div class='more'>"
-                    . "<a href='{$sc[$k]["url"]}' title='More on {$sc[$k]["title"]}' aria-title='More on {$sc[$k]["title"]}'>More</a> |";
-                    // @TODO references
-                $str .= "</div>"
-                    . "</td>";
-                $str .= "<td>" . $sc[$k]["level"] . "</td>";
+            $str .= "<tr>";
+            // 1. guideline
+            $str .= "<td>"
+                . $guidelines[$j]["num"] . " - " . $principles[$i]["handle"] . ": "
+                . $guidelines[$j]["handle"]
+                . "</td>";
+
+            // 2. Criteria
+            $str .= "<td>"
+                . "<details><summary>"
+                . $sc[$k]["num"] . " - " . $sc[$k]["title"]
+                . "</summary>"
+                . "<div class='more'>"
+                    . "<a href='@@' title='More on {$sc[$k]["title"]}' aria-title='More on {$sc[$k]["title"]}'>More</a> "
+                    . ((count($sc[$k]["versions"]) > 1) ? "" : "(new to WCAG 2.1) ")
+                . "</div>"
+                . "</details>"
+                . "</td>";
+
+            // 3. Level
+            $str .= "<td>" . $sc[$k]["level"] . "</td>";
+
             $str .= "</tr>";
-            echo $str;
         }
     }
 }
+
+echo $str;
 echo "</table>";
+
+exit;
+
+// -------------------
+//
+
+
 
 ?>
 
