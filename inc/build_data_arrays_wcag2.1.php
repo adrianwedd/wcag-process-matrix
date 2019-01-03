@@ -24,10 +24,6 @@ for($i=0 ; $i < count($principles) ; $i++) {
             // each $tr[$row] is one line in the final table
             $tr[$row][] = $guidelines[$j]["num"] . " - " . $principles[$i]["handle"] . ": "
                 . $guidelines[$j]["handle"];
-            // $tr[$row][] = $sc[$k]["num"] . " - " . $sc[$k]["title"];
-            // misses $sc[$k]["description"]
-            // misses $sc[$k]["url"]
-            // $tr[$row][] = $sc[$k]["level"];
 
 
             $sc_id = $sc[$k]["num"];
