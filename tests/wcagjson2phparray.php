@@ -57,7 +57,7 @@ for($i=0 ; $i < count($principles) ; $i++) {
                 . $sc[$k]["num"] . " - " . $sc[$k]["title"]
                 . "</summary>"
                 . "<div class='more'>"
-                    . "<a href='@@' title='More on {$sc[$k]["title"]}' aria-title='More on {$sc[$k]["title"]}'>More</a> "
+                    . "<a href='@@' title='More on {$sc[$k]["title"]}' aria-title='More on {$sc[$k]["title"]}'>More (TODO)</a> "
                     . ((count($sc[$k]["versions"]) > 1) ? "" : "(new to WCAG 2.1) ")
                 . "</div>"
                 . "</details>"
