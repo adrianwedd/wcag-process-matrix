@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>WCAG2.0 Responsibility Matrix</title>
+    <title>WCAG2.1 Responsibility Matrix</title>
     <style>
         table, th, td {border:1px solid silver; border-collapse:collapse; }
         th, td { padding:.5em; vertical-align:top;}
@@ -14,7 +14,7 @@
     </style>
 </head>
 <body>
-    <h1>WCAG2.0 Responsibility Matrix</h1>
+    <h1>WCAG2.1 Responsibility Matrix</h1>
 
 <?php
 
@@ -57,9 +57,19 @@ for($i=0 ; $i < count($principles) ; $i++) {
             // each $tr[$row] is one line in the final table
             $tr[$row][] = $guidelines[$j]["num"] . " - " . $principles[$i]["handle"] . ": "
                 . $guidelines[$j]["handle"];
-            $tr[$row][] = $sc[$k]["num"] . " - " . $sc[$k]["title"];
+            // $tr[$row][] = $sc[$k]["num"] . " - " . $sc[$k]["title"];
             // misses $sc[$k]["description"]
             // misses $sc[$k]["url"]
+            // $tr[$row][] = $sc[$k]["level"];
+
+            $sc_id = $sc[$k]["num"];
+            $sc_title = $sc[$k]["handle"];
+            $sc_description = $sc[$k]["title"];
+            // $sc_url = $sc[$k]["url"];
+            // https://www.w3.org/TR/WCAG21/#
+            $sc_url = "https://www.w3.org/TR/WCAG21/#" . substr($sc[$k]["id"], 6);
+            $tr[$row][] = "<a href='" . $sc_url . "'><strong>" . $sc_id . " - " . $sc_title . "</strong></a>";
+            $tr[$row][] = $sc_description;
             $tr[$row][] = $sc[$k]["level"];
 
             // responsibility matrix injected here
