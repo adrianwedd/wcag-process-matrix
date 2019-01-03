@@ -1,19 +1,30 @@
 # WCAG Process Matrix
 
-This originated in me being frustrated by not seeing the title for success criteria in [Accessibility Responsibility Breakdown](https://www.w3.org/community/wai-engage/wiki/Accessibility_Responsibility_Breakdown) and then all hell broke loose because I wanted to be able to tweak things around.
+This originated in me being frustrated by not seeing the title for success criteria in W3C Wiki's [Accessibility Responsibility Breakdown](https://www.w3.org/community/wai-engage/wiki/Accessibility_Responsibility_Breakdown) and then all hell broke loose because I wanted to be able to tweak things around.
 
 ## Aim of this project
 
 1. easy creation of any type of tables
 2. copy-pasting should easily make it possible to create sortable/filterable ODS tables.
 
+### The story so far
+
+This project works with WCAG 2.0, based on work by WAI-engage W3C Community Group.
+
+It was evolved to WCAG 2.1 during a workhop that took place during Paris Web 2018. **Please note that all AAA criteria which are new to WCAG 2.1 have only been tagged with “Quality control” as we ran out of time during the workshop.**
+
 ## Download files directly
 
 If you don't want to download, install and run the project locally, you can download directly these versions:
 
-* [WCAG2.0 HTML file](https://github.com/notabene/wcag-process-matrix/blob/master/output/process-matrix-wcag20.html)
-* [WCAG2.0 ODS file](https://github.com/notabene/wcag-process-matrix/blob/master/output/process-matrix-wcag20.ods)
-* [WCAG2.0 XLSX file](https://github.com/notabene/wcag-process-matrix/blob/master/output/process-matrix-wcag20.xlsx)
+* WCAG 2.0
+	* [WCAG2.0 HTML file](https://github.com/notabene/wcag-process-matrix/blob/master/output/process-matrix-wcag20.html)
+	* [WCAG2.0 ODS file](https://github.com/notabene/wcag-process-matrix/blob/master/output/process-matrix-wcag20.ods)
+	* [WCAG2.0 XLSX file](https://github.com/notabene/wcag-process-matrix/blob/master/output/process-matrix-wcag20.xlsx)
+* WCAG 2.1
+	* [WCAG2.1 HTML file](https://github.com/notabene/wcag-process-matrix/blob/master/output/process-matrix-wcag21.html)
+	* [WCAG2.1 ODS file](https://github.com/notabene/wcag-process-matrix/blob/master/output/process-matrix-wcag21.ods)
+	* [WCAG2.1 XLSX file](https://github.com/notabene/wcag-process-matrix/blob/master/output/process-matrix-wcag21.xlsx)
 
 **Beware** The ODS is less useful than the XLSX. I suspect PHPSpreadsheet does a better job with Excel but this will have to do for now. I still provide the ODS because open source love etc.
 
@@ -29,13 +40,15 @@ If you want to create your own tables, you need to install [PHPSpreadsheet](http
 
 PHPSpreadsheet is licensed under [GNU LESSER GENERAL PUBLIC LICENSE](vendor/phpoffice/phpspreadsheet/LICENSE).
 
+For testing etc., please refer to [README2.md](README2.md).
+
 
 ## Credits
 
-* WCAG JSON taken from Karl Groves's [WCAG as JSON](https://github.com/karlgroves/wcag-as-json)
-* Accessibility Responsibility Breakdown taken from the [General Overview](https://www.w3.org/community/wai-engage/wiki/Accessibility_Responsibility_Breakdown#General_Overview)
-
-Then I transformed the table (in sources/overview_table.html) into a JSON and did some PHP.
+* WCAG 2.0 JSON taken from Karl Groves's [WCAG as JSON](https://github.com/karlgroves/wcag-as-json)
+* WCAG 2.1 JSON taken from Eric Eggert's [WCAG Quickref JSON](https://github.com/w3c/wai-wcag-quickref/blob/gh-pages/_data/wcag21.json)
+* Accessibility Responsibility Breakdown taken from the [General Overview](https://www.w3.org/community/wai-engage/wiki/Accessibility_Responsibility_Breakdown#General_Overview), then transformed (from sources/overview_table.html) into a JSON.
+* WCAG 2.1 responsibilities were created at a workshop during Paris Web 2018, thanks to all participants to the workshop! [Source table](sources/WIP_process-matrix-wcag21.ods)
 
 ## LICENCE
 
