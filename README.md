@@ -43,7 +43,7 @@ For testing etc., please refer to [README2.md](README2.md).
 * WCAG 2.0 JSON taken from Karl Groves's [WCAG as JSON](https://github.com/karlgroves/wcag-as-json)
 * WCAG 2.1 JSON taken from Eric Eggert's [WCAG Quickref JSON](https://github.com/w3c/wai-wcag-quickref/blob/gh-pages/_data/wcag21.json)
 * Accessibility Responsibility Breakdown taken from the [General Overview](https://www.w3.org/community/wai-engage/wiki/Accessibility_Responsibility_Breakdown#General_Overview), then transformed (from sources/overview_table.html) into a JSON.
-* WCAG 2.1 responsibilities were created at a workshop during Paris Web 2018, thanks to all participants to the workshop!
+* WCAG 2.1 responsibilities were created at a workshop during Paris Web 2018, thanks to all participants to the workshop! [Source table](sources/WIP_process-matrix-wcag21.ods)
 
 ## LICENCE
 
